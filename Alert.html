@@ -61,7 +61,7 @@
         <h2>Are you sure? Absolutely sure?</h2>
         <p>This action may cause data loss.</p>
         <input type="button" value="Cancel" class="cancel" />
-        <input type="button" value="Continue" />
+        <input type="button" value="Continue" class="Continue" />
       </div>
     </div>
 
@@ -70,6 +70,7 @@
       const showButton = document.querySelector(".show");
       const alertDialog = document.querySelector(".alert");
       const cancelButton = document.querySelector(".cancel");
+      const continuebtn = document.querySelector(".Continue");
 
       showButton.addEventListener("click", () => {
         alertDialog.style.display = "block";
@@ -78,6 +79,11 @@
       });
 
       cancelButton.addEventListener("click", () => {
+        alertDialog.style.display = "none";
+        showButton.style.display = "inline-block";
+      });
+      continuebtn.addEventListener("click", () => {
+        alert("You deleted successfully.");
         alertDialog.style.display = "none";
         showButton.style.display = "inline-block";
       });
